@@ -1,0 +1,33 @@
+body {
+    font-family: Calibri, sans-serif;
+    background-color: #f7f6fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    padding: 20px 40px;
+    min-width: 400px;
+    min-height: 150px;
+    border-radius: 15px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2D1B69;
+    transition: all ease 0.4s;
+}
+
+h2:hover {
+    color: #382283;
+}

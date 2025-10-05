@@ -1,0 +1,39 @@
+.toDoForm {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.toDoForm input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+    background-color: #F8F6FF;
+    color: #2D1B69;
+    outline: none;
+}
+
+.toDoForm input:hover {
+    border-color: #8B5CF6;
+    background-color: #f3eeff;
+}
+
+.toDoForm button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #EAE6FF;
+    color: #2D1B69;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.toDoForm button:hover {
+    background-color: #7B61FF;
+    color: #fff;
+}

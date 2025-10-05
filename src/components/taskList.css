@@ -1,0 +1,61 @@
+.taskList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.taskList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: #2D1B69; /*#B0B0B0 - выполненные*/
+    background-color: #F8F6FF;
+    /*border: 1px solid #E2E8F0;*/
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.taskList li:hover {
+    color: #191919;
+    background-color: #EEE9FF;
+}
+
+.taskList li div {
+    display: flex;
+    width: 70px;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+
+.taskList button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s;
+}
+#delete {
+    background-color: #F5C6C6;
+    color: #7B1F1F;
+}
+
+#complete {
+    background-color: #EAE6FF;
+    color: #2D1B69;
+}
+
+
+#delete:hover {
+    background-color: #E57373;
+    color: white;
+}
+
+#complete:hover {
+    background-color: #7B61FF;
+    color: white;
+}
