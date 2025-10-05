@@ -30,7 +30,7 @@ export default function App() {
 
     return (
         <div className="App">
-            <h2>Todo-list на React</h2>
+            <h2>To Do list на React</h2>
             <div className="todo_div">
                 <TodoForm addTodo={addTodo} />
                 <TaskList
