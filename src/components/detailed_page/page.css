@@ -51,6 +51,8 @@
     background-color: #e0e0e0;
 }
 
+/*Шедевроинпут и наведение + фокус*/
+
 .title-input {
     width: 87%;
     padding: 10px;
@@ -60,15 +62,72 @@
     outline: none;
     font-weight: bold;
     transition: all ease-out 0.2s;
+    background-color: #fafaff;
 }
 
-.title-input:hover {
+.title-input:hover, .title-input:focus {
     border-color: #8B5CF6;
     background-color: #f7f6fd;
 }
 
+.title-container {
+    position: relative;
+    transition: all ease-out 0.2s;
+}
+
+.title-legend {
+    position: absolute;
+    top: -0.7rem;
+    left: 0.6rem;
+    padding: 0 3px;
+    transition: background 0.2s ease-out, transform 0.2s ease-out, color 0.2s ease-out;
+    z-index: 1;
+}
+
+.title-legend::before,
+.title-legend::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.title-legend::before {
+    background-color: #fafaff;
+    opacity: 1;
+}
+
+.title-legend::after {
+    background: linear-gradient(
+            to bottom,
+            #fafaff,
+            #f7f6fd
+    );
+    opacity: 0;
+}
+
+.title-input:hover + .title-legend::after,
+.title-container:focus-within .title-legend::after {
+    opacity: 1;
+}
+
+.title-input:hover + .title-legend::before,
+.title-container:focus-within .title-legend::before {
+    opacity: 0;
+}
+
+.title-input:hover + .title-legend,
+.title-container:focus-within .title-legend {
+    color: #8B5CF6;
+    transform: translateY(-2px);
+}
+
+
+/*Шедевроописание и его ховеры + фокусы охх + скроллбар*/
+
 .description-input {
     box-sizing: border-box;
+    display: block;
     width: 600px;
     height: 120px;
     padding: 10px;
@@ -78,11 +137,65 @@
     outline: none;
     resize: none;
     transition: all ease-out 0.2s;
+    background-color: #fafaff;
 }
 
-.description-input:hover {
+.description-input:hover, .description-input:focus {
     border-color: #8B5CF6;
     background-color: #f7f6fd;
+}
+
+
+.description-container {
+    position: relative;
+    transition: all ease-out 0.2s;
+}
+
+.description-legend {
+    position: absolute;
+    top: -0.7rem;
+    left: 0.6rem;
+    padding: 0 3px;
+    transition: background 0.2s ease-out, transform 0.2s ease-out, color 0.2s ease-out;
+    z-index: 1;
+}
+
+.description-legend::before,
+.description-legend::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.description-legend::before {
+    background-color: #fafaff;
+    opacity: 1;
+}
+
+.description-legend::after {
+    background: linear-gradient(
+            to bottom,
+            #fafaff,
+            #f7f6fd
+    );
+    opacity: 0;
+}
+
+.description-input:hover + .description-legend::after,
+.description-container:focus-within .description-legend::after {
+    opacity: 1;
+}
+
+.description-input:hover + .description-legend::before,
+.description-container:focus-within .description-legend::before {
+    opacity: 0;
+}
+
+.description-input:hover + .description-legend,
+.description-container:focus-within .description-legend{
+    color: #8B5CF6;
+    transform: translateY(-2px);
 }
 
 .description-input::-webkit-scrollbar {

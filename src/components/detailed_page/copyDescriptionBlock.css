@@ -1,0 +1,20 @@
+.copyDescription {
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 7px;
+}
+
+.copyDescButton {
+    width: 200px;
+}
+
+.copyMessage {
+    display: inline-block;
+    align-content: center;
+    margin-left: 10px;
+    color: #2D1B69;
+    transition: all ease-out 0.2s;
+}
+
+.copyMessage.show {opacity: 1}
+.copyMessage.hide {opacity: 0}
