@@ -1,3 +1,6 @@
+
+// Здесь внешний div таска, раскрытие, кнопки и тп
+
 import { FaTrash, FaCheck} from 'react-icons/fa'
 import './taskList.css'
 

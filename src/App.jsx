@@ -5,13 +5,14 @@ import TaskList from './components/taskList.jsx';
 
 import DetailedWindow from './components/detailed_page/page.jsx';
 import './App.css'
+import TaskControls from "./components/taskControls.jsx";
 
 export default function App() {
     const [todos, setTodos] = useState([]);
     const [openId, setOpenId] = useState(null);
 
     // Функции для работы с таском в главном меню
-    const addTodo = (text) => {
+    const addTodo = (text) => { // Добавление нового таска через стейт с тасками
         const newTodo = {
             text,
             id: Date.now(),
@@ -25,6 +26,10 @@ export default function App() {
 
     const deleteTodo = (id) => {
         setTodos(todos.filter((item) => item.id !== id))
+    }
+
+    const deleteTodoAll = () => {
+        setTodos([]);
     }
 
     const toggleTodo = (id) => {
@@ -66,6 +71,13 @@ export default function App() {
                 <h2>To Do list на React</h2>
                 <div className="todo_div">
                     <TodoForm addTodo={addTodo} />
+
+                    <TaskControls
+                        doneTasksCount={todos.filter((item) => item.completed === true).length}
+                        allTasksCount={todos.length}
+                        deleteTodoAll={deleteTodoAll}
+                    />
+
                     <TaskList
                         todos={todos}
                         toggleTodo={toggleTodo}

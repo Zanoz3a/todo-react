@@ -37,3 +37,19 @@
     background-color: #7B61FF;
     color: #fff;
 }
+
+.toDoButtonMainAllDelete {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #F5C6C6;
+    color: #7B1F1F;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.toDoButtonMainAllDelete:hover {
+    background-color: #E57373;
+    color: white;
+}

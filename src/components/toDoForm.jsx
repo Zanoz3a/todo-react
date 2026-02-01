@@ -13,15 +13,18 @@ export default function TodoForm({addTodo}) {
     }
 
     return (
-        <form onSubmit={handleChange} className="toDoForm">
-            <input
-                type="text"
-                value={todos}
-                placeholder={"Введите задачу"}
-                onChange={(e) => setTodos(e.target.value)}
-            />
-            <button type="submit">Добавить</button>
-        </form>
+        <>
+            <form onSubmit={handleChange} className="toDoForm">
+                <input
+                    type="text"
+                    value={todos}
+                    placeholder={"Введите задачу"}
+                    onChange={(e) => setTodos(e.target.value)}
+                />
+                <button type="submit" className="toDoButtonMainAdd">Добавить</button>
+            </form>
+        </>
+
     )
 
 }

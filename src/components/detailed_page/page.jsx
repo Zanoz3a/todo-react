@@ -1,3 +1,6 @@
+
+// Здесь все, что связано с отдельным окном редактирования таска
+
 import { useState } from 'react';
 import { RiCloseLargeLine } from "react-icons/ri";
 import CopyDescriptionBlock from "./copyDescriptionBlock.jsx";
