@@ -17,7 +17,9 @@ export default function DetailedWindow({todo, onClose, onComplete, onDelete, onU
     const handleChangeDescriptionApp = () => onUpdDesc(todo.id, description);
 
     return (
-        <div className={"overlay"} onClick={onClose}>
+        <div className={"overlay"}
+             onClick={onClose}
+        >
             <div className={"details-window"} onClick={(e) => e.stopPropagation()}>
                 <div className={"top-container"}>
                     <div className={"title-container"}>
