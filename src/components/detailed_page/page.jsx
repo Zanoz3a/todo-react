@@ -1,7 +1,7 @@
 
 // Здесь все, что связано с отдельным окном редактирования таска
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { RiCloseLargeLine } from "react-icons/ri";
 import CopyDescriptionBlock from "./copyDescriptionBlock.jsx";
 import './page.css'
@@ -10,16 +10,33 @@ export default function DetailedWindow({todo, onClose, onComplete, onDelete, onU
     const [title, setTitle] = useState(todo.text.toString());
     const [description, setDescription] = useState(todo.description.toString());
 
-    const handleChangeTitle = (e) => setTitle(e.target.value);
-    const handleChangeTitleApp = () => onUpdTitle(todo.id, title);
+    const handleChangeTitle = (e) => {
+        const newTitle = e.target.value;
+        setTitle(newTitle);
+        onUpdTitle(todo.id, newTitle);
+    }
+    // const handleChangeTitleApp = () => onUpdTitle(todo.id, title);
 
-    const handleChangeDescription = (e) => setDescription(e.target.value);
-    const handleChangeDescriptionApp = () => onUpdDesc(todo.id, description);
+    const handleChangeDescription = (e) => {
+        const newDescription = e.target.value;
+        setDescription(newDescription);
+        onUpdDesc(todo.id, newDescription)
+    }
+    // const handleChangeDescriptionApp = () => onUpdDesc(todo.id, description);
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === "Escape") onClose()}
+        document.addEventListener("keydown", handleKeyDown);
+        return () => {
+            document.removeEventListener("keydown", handleKeyDown);
+        }
+    }, [onClose]);
 
     return (
-        <div className={"overlay"}
-             onClick={onClose}
-        >
+        <div
+            className={"overlay"}
+             onClick={onClose}>
             <div className={"details-window"} onClick={(e) => e.stopPropagation()}>
                 <div className={"top-container"}>
                     <div className={"title-container"}>
@@ -28,7 +45,6 @@ export default function DetailedWindow({todo, onClose, onComplete, onDelete, onU
                             value={title}
                             onClick={(e) => e.stopPropagation()}
                             onChange={handleChangeTitle}
-                            onBlur={(e) => handleChangeTitleApp(todo.id, e.target.value)}
                             className={"title-input"}
                         />
                         <span className={"title-legend"}>Имя таска</span>
@@ -58,7 +74,6 @@ export default function DetailedWindow({todo, onClose, onComplete, onDelete, onU
                             placeholder={"Начните вводить описание здесь..."}
                             onClick={(e) => e.stopPropagation()}
                             onChange={handleChangeDescription}
-                            onBlur={(e) => handleChangeDescriptionApp(todo.id, e.target.value)}
                             className={"description-input"}
                         />
 
